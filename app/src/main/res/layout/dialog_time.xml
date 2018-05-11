@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--本文件是自定义时间设置对话框的布局文件-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+<!--第一行显示对话框的标题“请设置时间”-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_blue"
+        android:gravity="center"
+        android:padding="8dp">
+        <TextView
+            android:id="@+id/tvTtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="请设置时间"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/time_text_size" />
+    </LinearLayout>
+<!--对话框内容部分显示一个时间选择器-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <TimePicker
+            android:id="@+id/tpTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:timePickerMode="spinner"></TimePicker>
+    </LinearLayout>
+    <!--最底下是“取消”和“确定”按钮，中间还有一条分隔线-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/check_button_blue"
+            android:text="取消"
+            android:textColor="#fff"
+            android:textSize="@dimen/time_text_size"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#eeeeee" />
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/check_button_blue"
+            android:text="确定"
+            android:textColor="#fff"
+            android:textSize="@dimen/time_text_size"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

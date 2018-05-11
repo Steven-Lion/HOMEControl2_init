@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+                android:oneshot="true">
+    <item
+        android:drawable="@mipmap/oncl22"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl21"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl19"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl17"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl15"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl13"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl11"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl9"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl7"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl5"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl3"
+        android:duration="100"/>
+    <item
+        android:drawable="@mipmap/oncl1"
+        android:duration="100"/>
+
+</animation-list>

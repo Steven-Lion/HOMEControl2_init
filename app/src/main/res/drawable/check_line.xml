@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--选中时候显示图片home_line.png-->
+    <item android:drawable="@mipmap/home_line" android:state_checked="true" />
+    <!--没选中时候显示图片home_line2.png-->
+    <item android:drawable="@mipmap/home_line2" android:state_checked="false" />
+</selector>

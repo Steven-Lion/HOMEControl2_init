@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--android:numColumns="3"，设置网格布局有3列-->
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:numColumns="3"></GridView>
+<!--在页面的底部是一个RadioGroup，里面有"自动控制"和"手动控制"两个RadioButton，还有最右边"时间设置"的Button-->
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbManual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_radio"
+            android:drawablePadding="5dp"
+            android:onClick="MyClick"
+            android:padding="10dp"
+            android:text="手动控制"
+            android:textColor="#535c61"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbAutomatic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableLeft="@drawable/check_radio"
+            android:drawablePadding="5dp"
+            android:onClick="MyClick"
+            android:padding="10dp"
+            android:text="自动控制"
+            android:textColor="#535c61"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/btnSetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:layout_marginRight="50dp"
+            android:background="@mipmap/set_normal"
+            android:onClick="MyClick"
+            android:text="时间设定"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+    </RadioGroup>
+
+
+
+    <include layout="@layout/include_title" />
+</RelativeLayout>

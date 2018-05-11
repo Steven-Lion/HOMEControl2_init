@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/pic_home">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <!--该线性布局和下面的线性布局均设置layout_weight="1"，各占屏幕的一半-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></LinearLayout>
+        <!--该LinearLayout占据屏幕的右半部分为云平台登录信息设置面板-->
+        <LinearLayout
+            android:id="@+id/llRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+            <!--云平台登陆信息设置面板分为两部分，第一部分是一张显示"云平台登录信息设置"的图片,占屏幕高度的权重为1-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:padding="10dp"
+                    android:src="@mipmap/pic_title" />
+            </LinearLayout>
+            <!--第二部分是登录信息设置模块，占屏幕高度的权重为2.8，可以选择“登陆”或者是“模拟”方式进入系统-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_weight="2.8"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <!--登陆信息设置模块又分为三块，第一部分为“登陆”和“模拟”这两种方式的选项卡，通过RadioGroup来实现-->
+                <RadioGroup
+                    android:id="@+id/rg"
+                    android:layout_width="@dimen/dp420"
+                    android:layout_height="@dimen/dp40"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbLogin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:checked="true"
+                        android:drawableBottom="@drawable/check_line"
+                        android:gravity="center"
+                        android:onClick="MyClick"
+                        android:text="登录"
+                        android:textColor="@drawable/check_textcolor"
+                        android:textSize="@dimen/sp16" />
+
+                    <RadioButton
+                        android:id="@+id/rbSimulation"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="@drawable/check_line"
+                        android:gravity="center"
+                        android:onClick="MyClick"
+                        android:text="模拟"
+                        android:textColor="@drawable/check_textcolor"
+                        android:textSize="@dimen/sp16" />
+                </RadioGroup>
+                <!--登陆信息模块的第二部分是IP，项目标识，用户名，密码的LinearLayout和保存登录信息的CheckBox-->
+                <LinearLayout
+                    android:id="@+id/llLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dp140"
+                    android:layout_marginRight="@dimen/dp150"
+                    android:orientation="vertical">
+                    <!--设置IP-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="right"
+                            android:text="IP："
+                            android:textColor="@color/textcolor_black"
+                            android:textSize="@dimen/sp16" />
+
+                        <EditText
+                            android:id="@+id/edtIp"
+                            android:layout_width="0dp"
+                            android:textSize="@dimen/sp16"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:layout_weight="5"
+                            android:background="@drawable/boeder_edittex"
+                            android:hint="@string/ip_tip"
+                            android:padding="8dp"
+                            android:singleLine="true"
+                            android:text="http://192.168.2.22:8080" />
+                    </LinearLayout>
+                    <!--设置项目标识-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="right"
+                            android:singleLine="true"
+                            android:text="项目标识："
+                            android:textColor="@color/textcolor_black"
+                            android:textSize="@dimen/sp16" />
+
+                        <EditText
+                            android:id="@+id/edtProject"
+                            android:layout_width="0dp"
+                            android:textSize="@dimen/sp16"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:layout_weight="5"
+                            android:background="@drawable/boeder_edittex"
+                            android:hint="@string/project_tip"
+                            android:padding="8dp"
+                            android:singleLine="true"
+                            android:text="Home" />
+                    </LinearLayout>
+                    <!--设置用户名-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="right"
+                            android:text="用户名："
+                            android:textColor="@color/textcolor_black"
+                            android:textSize="@dimen/sp16" />
+
+                        <EditText
+                            android:id="@+id/edtUserName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:layout_weight="5"
+                            android:textSize="@dimen/sp16"
+                            android:background="@drawable/boeder_edittex"
+                            android:hint="@string/username_tip"
+                            android:padding="8dp"
+                            android:singleLine="true"
+                            android:text="test" />
+                    </LinearLayout>
+                    <!--设置密码-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.6"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:gravity="right"
+                            android:text="密码："
+                            android:textColor="@color/textcolor_black"
+                            android:textSize="@dimen/sp16" />
+
+                        <EditText
+                            android:id="@+id/edtPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp10"
+                            android:layout_weight="5"
+                            android:textSize="@dimen/sp16"
+                            android:background="@drawable/boeder_edittex"
+                            android:hint="@string/pwd_tip"
+                            android:inputType="textPassword"
+                            android:padding="8dp"
+                            android:singleLine="true"
+                            android:text="123456" />
+                    </LinearLayout>
+                    <!--在该LinearLayout中的右侧放一个“保存登陆信息”的CheckBox-->
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp20"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <CheckBox
+                            android:id="@+id/cbSaveMsg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="保存登录信息"
+                            android:textSize="@dimen/sp16"
+                            android:textColor="@android:color/darker_gray" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <!--在云平台登陆信息模块的下方是一个“确定”按钮-->
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:background="@drawable/check_button_login"
+                    android:onClick="MyClick"
+                    android:paddingBottom="@dimen/dp15"
+                    android:text="确定"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp16" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--引入标题栏-->
+    <include layout="@layout/include_title" />
+
+</RelativeLayout>

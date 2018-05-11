@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/pic_live_close"
+    android:id="@+id/rlBackGround"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:id="@+id/llbottomBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客厅灯控开关"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="22sp" />
+
+        <CheckBox
+            android:id="@+id/cbLight"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/check_curtain_switch"
+            android:button="@null" />
+    </LinearLayout>
+
+    <include layout="@layout/include_title" />
+
+</RelativeLayout>

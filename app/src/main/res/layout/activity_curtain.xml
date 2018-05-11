@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/pic_curtains">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <!--该线性布局不显示内容，只是为了让右边的窗帘控制面板占屏幕宽度的一定比例-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.3"></LinearLayout>
+        <!--该线性布局为控制窗帘开关的LinearLayout，正中间放一个TextView和CheckBox-->
+        <LinearLayout
+            android:id="@+id/llOffOn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="窗帘控制开关"
+                android:textSize="22sp" />
+            <!--该CheckBox为控制窗帘的开关-->
+            <CheckBox
+                android:id="@+id/cbCurtain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivCurtain"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/check_curtain_switch"
+                android:button="@null" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--引入标题栏-->
+    <include layout="@layout/include_title" />
+    <!--开启窗帘对应的ImageView，默认隐藏-->
+    <ImageView
+        android:id="@+id/ivOffCurtain"
+        android:layout_width="@dimen/dp750"
+        android:layout_height="@dimen/dp480"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp143"
+        android:layout_marginStart="@dimen/dp143"
+        android:background="@drawable/anim_curtain_on"
+        android:visibility="visible" />
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!--这是标题栏的布局文件-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--线性布局中放着一个高度是50dp的蓝色背景的相对布局-->
+    <RelativeLayout
+        android:id="@+id/rlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/title_blue">
+        <!--最左侧是一个“返回”的图片-->
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:onClick="MyClick"
+            android:padding="10dp"
+            android:src="@mipmap/back" />
+        <!--标题-->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ivBack"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+        <!--离最右边10dp的地方是一个“设置”的ImageView-->
+        <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:onClick="MyClick"
+            android:src="@mipmap/btn_login"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>
