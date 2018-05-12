@@ -60,6 +60,7 @@ public class BedroomActivity extends Activity {
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         rlBackGround = (RelativeLayout) findViewById(R.id.rlBackGround);
         llbottomBackGround = (LinearLayout) findViewById(R.id.llbottomBackGround);
+        //设置透明度.
         llbottomBackGround.getBackground().setAlpha(220);
         tvTitle.setText("卧室灯控");
         mAppAction = new AppActionImpl(this);

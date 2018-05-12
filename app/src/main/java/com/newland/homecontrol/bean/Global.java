@@ -6,6 +6,7 @@ package com.newland.homecontrol.bean;
 
 public class Global {
     //存储的是执行器的ID
+    //TODO:修改执行器ID.
     public static final int CURTAIN = 83;//窗帘执行器
     public static final int LIGHT_LIVING = 84;//客厅电灯执行器
     public static final int LIGHT_ROOM = 86;//卧室电灯执行器

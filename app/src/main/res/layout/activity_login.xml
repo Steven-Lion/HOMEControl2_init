@@ -131,7 +131,7 @@
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1.6"
+                            android:layout_weight="1.5"
                             android:focusable="true"
                             android:focusableInTouchMode="true"
                             android:gravity="right"
@@ -139,8 +139,16 @@
                             android:text="项目标识："
                             android:textColor="@color/textcolor_black"
                             android:textSize="@dimen/sp16" />
-
-                        <EditText
+                        
+                      <Spinner
+                          android:id="@+id/SpProject"
+                          android:layout_width="0dp"
+                          android:layout_weight="5"
+                          android:padding="5dp"
+                          android:entries="@array/spinnerarr"
+                          android:layout_marginLeft="10dp"
+                          android:layout_height="wrap_content"/>
+                       <!-- <EditText
                             android:id="@+id/edtProject"
                             android:layout_width="0dp"
                             android:textSize="@dimen/sp16"
@@ -152,6 +160,7 @@
                             android:padding="8dp"
                             android:singleLine="true"
                             android:text="Home" />
+                        -->
                     </LinearLayout>
                     <!--设置用户名-->
                     <LinearLayout

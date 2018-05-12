@@ -27,4 +27,12 @@
         <item>23</item>
         <item>24</item>
     </string-array>
+    <string-array name="spinnerarr">
+        <item>iotOne</item>
+        <item>iotTwo</item>
+        <item>iotThree</item>
+        <item>iotFour</item>
+        <item>iotFive</item>
+        <item>iotSix</item>
+    </string-array>
 </resources>
