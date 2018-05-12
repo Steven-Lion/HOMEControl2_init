@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,7 +40,7 @@ public class LoginActivity extends Activity {
     private CheckBox cbSaveMsg;//是否记住密码
     private AppAction mAppAction;
     private EditText edtIp;//ip
-    private EditText edtProject;//项目标识
+    private Spinner SpProject;//项目标识
 
     private LinearLayout llLogin;//登录信息模块
     private LinearLayout llRight;//右半部分登陆信息设置所在的LinearLayout
@@ -69,7 +70,7 @@ public class LoginActivity extends Activity {
         llLogin = (LinearLayout) findViewById(R.id.llLogin);
         llRight = (LinearLayout) findViewById(R.id.llRight);
         edtIp = (EditText) findViewById(R.id.edtIp);
-        edtProject = (EditText) findViewById(R.id.edtProject);
+        SpProject = (Spinner) findViewById(R.id.SpProject);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         cbSaveMsg = (CheckBox) findViewById(R.id.cbSaveMsg);
         ivBack.setImageResource(R.mipmap.icon);//设置图标
@@ -77,6 +78,7 @@ public class LoginActivity extends Activity {
         rlTitle.getBackground().setAlpha(180);//设置标题栏透明度
         llRight.getBackground().setAlpha(180);//设置右侧面板透明度
         mAppAction = new AppActionImpl(this);
+
     }
 
     /**
@@ -93,7 +95,30 @@ public class LoginActivity extends Activity {
                 edtUserName.setText(sharedPreferencesUtils.getUsername());
                 edtPassword.setText(sharedPreferencesUtils.getPassword());
                 edtIp.setText(sharedPreferencesUtils.getIp());
-                edtProject.setText(sharedPreferencesUtils.getProjectID());
+                int temp = -1;
+                //设置保存的Spinner数据
+                switch (sharedPreferencesUtils.getProjectID()){
+                    case "iotOne":
+                        temp += 1;
+                        break;
+                    case "iotTwo":
+                        temp += 2;
+                        break;
+                    case "iotThree":
+                        temp += 3;
+                        break;
+                    case "iotFour":
+                        temp += 4;
+                        break;
+                    case "iotFive":
+                        temp += 5;
+                        break;
+                    case "iotSix":
+                        temp += 6;
+                        break;
+
+                }
+                SpProject.setSelection(temp);
             } else {
                 //如果记住了登录信息但是不是要设置用户名密码的，在功能选择页面登陆
                 startIntent(true);
@@ -124,7 +149,7 @@ public class LoginActivity extends Activity {
         String UserName = edtUserName.getText().toString().trim();
         String Pwd = edtPassword.getText().toString().trim();
         String IP = edtIp.getText().toString().trim();
-        String ProjectId = edtProject.getText().toString().trim();
+        String ProjectId = SpProject.getSelectedItem().toString().trim();
         if (IP.isEmpty()) {
             Toast.makeText(this, "请填写云平台IP地址", Toast.LENGTH_SHORT).show();
             return;
@@ -161,7 +186,7 @@ public class LoginActivity extends Activity {
                             if (cbSaveMsg.isChecked()) {
                                 sharedPreferencesUtils.setIsSaveMsg(true);
                                 sharedPreferencesUtils.setIp(edtIp.getText().toString());
-                                sharedPreferencesUtils.setProjectID(edtProject.getText().toString());
+                                sharedPreferencesUtils.setProjectID(SpProject.getSelectedItem().toString());
                                 sharedPreferencesUtils.setPassword(edtPassword.getText().toString());
                                 sharedPreferencesUtils.setUsername(edtUserName.getText().toString());
                                 sharedPreferencesUtils.setPassword(edtPassword.getText().toString());
